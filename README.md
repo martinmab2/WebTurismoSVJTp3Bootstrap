@@ -89,25 +89,25 @@ El sitio se adapta correctamente a **Mobile, Tablet, Desktop y pantallas grandes
 ------
 
 ## 👨‍💻 Autores
-**Martín Alejandro Bonari**  
-**DNI: *44477373***
-**LI: *APU004495***
+**Martin Alejandro Bonari** 
+**-DNI: 44477373**
+**-LU: APU004495**
 ---
 **Fiorela Ayelen Jimenez** 
-**DNI: *46866164***
-**LU: *APU006616***
+**-DNI: 46866164**
+**-LU: APU006616**
 ---
 **Carlos Sebastián Velazque**
-**DNI: *46866266***
-**LU: *APU006775***
+**-DNI: 46866266**
+**-LU: APU006775**
 ---
 **Gutierrez Sergio Leonardo**
-**DNI: *46866292***
-**LU:*APU006615***
+**-DNI:46866292**
+**-LU:APU006615**
 ---
-****
-******
-******
+**Morales Jeremías Leonel 
+**-DNI:46890526**
+**-LU:APU006625**
 
 Estudiantes avanzados de la carrera Analista Programador Universitario – Facultad de Ingeniería, UNJu.  
 
