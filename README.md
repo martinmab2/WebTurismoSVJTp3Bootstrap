@@ -105,9 +105,10 @@ El sitio se adapta correctamente a **Mobile, Tablet, Desktop y pantallas grandes
 **-DNI:46866292**
 **-LU:APU006615**
 ---
-**Morales Jeremías Leonel**
+**Morales Jeremias Leonel**
 **-DNI:46890526**
 **-LU:APU006625**
+---
 
 Estudiantes avanzados de la carrera Analista Programador Universitario – Facultad de Ingeniería, UNJu.  
 
