@@ -105,7 +105,7 @@ El sitio se adapta correctamente a **Mobile, Tablet, Desktop y pantallas grandes
 **-DNI:46866292**
 **-LU:APU006615**
 ---
-**Morales Jeremías Leonel 
+**Morales Jeremías Leonel**
 **-DNI:46890526**
 **-LU:APU006625**
 
