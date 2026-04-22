@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Yungas Verdes</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="">
+            <a href="#">Yungas Verdes</a>
+            <button type="button">
+                <span></span>
+            </button>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filtros -->
+    <section>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <select id="filtroCategoria">
+                        <option value="">Todas las categorías</option>
+                        <option value="naturaleza">Naturaleza</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="aventura">Aventura</option>
+                    </select>
+                </div>
+                <div class="">
+                    <input type="text" id="busqueda" placeholder="Buscar destino">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Destinos -->
+    <section>
+        <div class="">
+            <div id="destinosGrid">
+                <div>
+                    <div>
+                        <img src="destino1.jpg" alt="Destino 1">
+                        <div>
+                            <h5>Destino 1</h5>
+                            <p>Descripción del destino.</p>
+                            <p><small>Precio: $100</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="destino2.jpg" alt="Destino 2">
+                        <div>
+                            <h5>Destino 2</h5>
+                            <p>Descripción del destino.</p>
+                            <p><small>Precio: $150</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="destino3.jpg" alt="Destino 3">
+                        <div>
+                            <h5>Destino 3</h5>
+                            <p>Descripción del destino.</p>
+                            <p><small>Precio: $200</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabla de Precios -->
+    <section>
+        <div class="">
+            <h2>Tabla de Precios</h2>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destino</th>
+                            <th>Precio Básico</th>
+                            <th>Precio Premium</th>
+                            <th>Duración</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Destino 1</td>
+                            <td>$100</td>
+                            <td>$150</td>
+                            <td>2 días</td>
+                        </tr>
+                        <tr>
+                            <td>Destino 2</td>
+                            <td>$150</td>
+                            <td>$200</td>
+                            <td>3 días</td>
+                        </tr>
+                        <tr>
+                            <td>Destino 3</td>
+                            <td>$200</td>
+                            <td>$250</td>
+                            <td>4 días</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

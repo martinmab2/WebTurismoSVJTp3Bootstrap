@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Yungas Verdes</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="">
+            <a href="#">Yungas Verdes</a>
+            <button type="button">
+                <span></span>
+            </button>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de Contacto -->
+    <section>
+        <div class="">
+            <h2>Contáctanos</h2>
+            <div>
+                <div>
+                    <form id="contactForm">
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div>
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">
+                            <span></span>
+                            Enviar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación -->
+    <div id="confirmModal">
+        <div>
+            <div>
+                <div>
+                    <h5>Mensaje Enviado</h5>
+                    <button type="button"></button>
+                </div>
+                <div>
+                    <p>Tu mensaje ha sido enviado correctamente. Te contactaremos pronto.</p>
+                </div>
+                <div>
+                    <button type="button">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
