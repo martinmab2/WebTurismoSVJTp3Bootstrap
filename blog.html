@@ -1,159 +1,374 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Yungas Verdes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Yungas Verdes</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Estilos del proyecto -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="">
-            <a href="#">Yungas Verdes</a>
-            <button type="button">
-                <span></span>
-            </button>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Filtro de Categorías -->
-    <section>
-        <div class="">
-            <div>
-                <div>
-                    <select id="filtroCategoriaBlog">
-                        <option value="">Todas las categorías</option>
-                        <option value="naturaleza">Naturaleza</option>
-                        <option value="cultura">Cultura</option>
-                        <option value="tips">Tips de Viaje</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Artículos del Blog -->
-    <section>
-        <div class="">
-            <div>
-                <div>
-                    <article data-categoria="naturaleza">
-                        <h2>Título del Artículo 1</h2>
-                        <p>Fecha de publicación</p>
-                        <img src="blog1.jpg" alt="Imagen del artículo">
-                        <p>Contenido del artículo...</p>
-                        <div>
-                            <h4>Comentarios</h4>
-                            <div>
-                                <p><strong>Usuario:</strong> Excelente artículo!</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article data-categoria="cultura">
-                        <h2>Título del Artículo 2</h2>
-                        <p>Fecha de publicación</p>
-                        <img src="blog2.jpg" alt="Imagen del artículo">
-                        <p>Contenido del artículo...</p>
-                        <div>
-                            <h4>Comentarios</h4>
-                            <div>
-                                <p><strong>Usuario:</strong> Muy informativo.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div>
-                    <div>
-                        <h3>Categorías</h3>
-                        <ul>
-                            <li><a href="#" data-categoria="naturaleza">Naturaleza</a></li>
-                            <li><a href="#" data-categoria="cultura">Cultura</a></li>
-                            <li><a href="#" data-categoria="tips">Tips de Viaje</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Módulo Educativo Phishing -->
-    <section>
-        <div class="">
-            <h2>Simulación de Phishing</h2>
-            <div>
-                <button data-bs-toggle="modal" data-bs-target="#phishingModal">Simulación de Phishing</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal Phishing -->
-    <div id="phishingModal">
-        <div>
-            <div>
-                <div>
-                    <h5>Advertencia: Simulación Educativa</h5>
-                    <button type="button"></button>
-                </div>
-                <div>
-                    <p><strong>Esta es una simulación educativa sobre phishing. NO se recopilan datos reales.</strong></p>
-                    <h6>Ejemplos de Señales de Fraude:</h6>
-                    <ul>
-                        <li>Emails de remitentes desconocidos pidiendo información personal.</li>
-                        <li>Enlaces sospechosos que no coinciden con el dominio oficial.</li>
-                        <li>Urgencia para proporcionar datos.</li>
-                    </ul>
-                    <p>Identifica los errores en el siguiente ejemplo:</p>
-                    <div id="phishingExample">
-                        <p>Email: "Actualiza tu cuenta en yungasverdes-fake.com"</p>
-                        <button id="error1">Error: Dominio falso</button>
-                        <button id="correct1">Correcto</button>
-                    </div>
-                    <div id="feedback"></div>
-                </div>
-            </div>
-        </div>
+  <!-- ═══════════════════════════════════════
+       NAVBAR (Bootstrap responsive)
+  ════════════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-leaf me-1"></i>Yungas Verdes
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false"
+              aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinos.html"><i class="fa-solid fa-map-location-dot me-1"></i>Destinos</a></li>
+          <li class="nav-item"><a class="nav-link" href="agencias.html"><i class="fa-solid fa-building me-1"></i>Agencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="precios.html"><i class="fa-solid fa-tag me-1"></i>Precios</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i>Blog</a></li>
+        </ul>
+      </div>
     </div>
-    <footer>
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h5>Contacto</h5>
-                    <form>
-                        <div class="">
-                            <input type="email" placeholder="Email">
-                        </div>
-                        <div class="">
-                            <textarea rows="3" placeholder="Mensaje"></textarea>
-                        </div>
-                        <button type="submit">Enviar</button>
-                    </form>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       HERO DEL BLOG
+  ════════════════════════════════════════ -->
+  <section class="blog-hero">
+    <div class="container">
+      <p class="text-uppercase fw-bold small mb-2" style="letter-spacing:.12em; opacity:.8;">
+        <i class="fa-solid fa-feather me-1"></i>Nuestro Blog
+      </p>
+      <h1>Historias desde las Yungas</h1>
+      <p>Consejos de viaje, cultura local y naturaleza para tu próxima aventura en Jujuy.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FILTROS POR CATEGORÍA (jQuery)
+  ════════════════════════════════════════ -->
+  <div class="filtros-wrap">
+    <div class="container d-flex flex-wrap gap-2 align-items-center">
+      <span class="fw-bold me-2" style="color:var(--muted);">
+        <i class="fa-solid fa-filter me-1"></i>Filtrar:
+      </span>
+      <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+      <button class="btn-filtro" data-filtro="naturaleza">
+        <i class="fa-solid fa-tree me-1"></i>Naturaleza
+      </button>
+      <button class="btn-filtro" data-filtro="cultura">
+        <i class="fa-solid fa-landmark me-1"></i>Cultura
+      </button>
+      <button class="btn-filtro" data-filtro="tips">
+        <i class="fa-solid fa-lightbulb me-1"></i>Tips de Viaje
+      </button>
+      <button class="btn-filtro" data-filtro="gastronomia">
+        <i class="fa-solid fa-utensils me-1"></i>Gastronomía
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       CONTENIDO PRINCIPAL: REVISTA + SIDEBAR
+  ════════════════════════════════════════ -->
+  <main class="container py-5">
+    <div class="row g-4">
+
+      <!-- ── Artículos (columna principal) ── -->
+      <div class="col-lg-8">
+        <div class="magazine-grid" id="articulos-grid">
+
+          <!-- Artículo destacado 1 -->
+          <div class="post-item post-featured reveal" data-cat="naturaleza">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=70"
+                   alt="Sendero en las Yungas" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-tree me-1"></i>Naturaleza</p>
+                <h2 class="post-title">Los senderos secretos de las Yungas jujeñas</h2>
+                <p class="post-lead">
+                  Descubrí rutas poco conocidas entre la selva de montaña, miradores increíbles y cascadas que todavía no aparecen en las guías turísticas.
+                </p>
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <div>
+                    <span class="chip">Naturaleza</span>
+                    <span class="chip">Trekking</span>
+                  </div>
+                  <p class="post-meta mb-0">
+                    <i class="fa-regular fa-calendar"></i> 18 abr 2026 &nbsp;
+                    <i class="fa-regular fa-clock"></i> 5 min
+                  </p>
                 </div>
-                <div class="">
-                    <h5>Redes Sociales</h5>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                </div>
-                <div class="">
-                    <h5>Mapa</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artículo secundario 2 -->
+          <div class="post-item post-secondary reveal" data-cat="cultura" style="transition-delay:.1s">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=70"
+                   alt="Centro histórico de Jujuy" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-landmark me-1"></i>Cultura</p>
+                <h2 class="post-title">Museos y arte en San Salvador</h2>
+                <p class="post-lead">Un recorrido urbano que mezcla historia, artesanías y la arquitectura colonial del centro.</p>
+                <p class="post-meta mb-0">
+                  <i class="fa-regular fa-calendar"></i> 14 abr 2026 &nbsp;
+                  <i class="fa-regular fa-clock"></i> 4 min
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artículo secundario 3 -->
+          <div class="post-item post-secondary reveal" data-cat="gastronomia" style="transition-delay:.2s">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=70"
+                   alt="Gastronomía regional" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-utensils me-1"></i>Gastronomía</p>
+                <h2 class="post-title">Tres sabores que tenés que probar en Jujuy</h2>
+                <p class="post-lead">Desde la humita hasta el locro de llama: guía rápida para comer bien sin gastar de más.</p>
+                <p class="post-meta mb-0">
+                  <i class="fa-regular fa-calendar"></i> 10 abr 2026 &nbsp;
+                  <i class="fa-regular fa-clock"></i> 3 min
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artículo secundario 4 -->
+          <div class="post-item post-secondary reveal" data-cat="tips" style="transition-delay:.1s">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=70"
+                   alt="Lago de montaña" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-lightbulb me-1"></i>Tips de Viaje</p>
+                <h2 class="post-title">Cómo preparar tu mochila para la puna</h2>
+                <p class="post-lead">Altitud, frío y sol al mismo tiempo: lo esencial que no puede faltar antes de salir.</p>
+                <p class="post-meta mb-0">
+                  <i class="fa-regular fa-calendar"></i> 7 abr 2026 &nbsp;
+                  <i class="fa-regular fa-clock"></i> 4 min
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artículo secundario 5 -->
+          <div class="post-item post-secondary reveal" data-cat="naturaleza" style="transition-delay:.2s">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=70"
+                   alt="Lagunas de colores" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-tree me-1"></i>Naturaleza</p>
+                <h2 class="post-title">Lagunas de colores en la Puna</h2>
+                <p class="post-lead">Un fenómeno natural único: las lagunas altoandinas cambian de color según la época del año.</p>
+                <p class="post-meta mb-0">
+                  <i class="fa-regular fa-calendar"></i> 3 abr 2026 &nbsp;
+                  <i class="fa-regular fa-clock"></i> 5 min
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Artículo secundario 6 -->
+          <div class="post-item post-secondary reveal" data-cat="cultura" style="transition-delay:.3s">
+            <article class="post-card h-100">
+              <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=800&q=70"
+                   alt="Festividades jujeñas" />
+              <div class="post-body">
+                <p class="post-kicker"><i class="fa-solid fa-landmark me-1"></i>Cultura</p>
+                <h2 class="post-title">Festividades y carnavales del norte</h2>
+                <p class="post-lead">La cultura viva de Jujuy: qué celebraciones no podés perderte durante el año.</p>
+                <p class="post-meta mb-0">
+                  <i class="fa-regular fa-calendar"></i> 1 abr 2026 &nbsp;
+                  <i class="fa-regular fa-clock"></i> 3 min
+                </p>
+              </div>
+            </article>
+          </div>
+
+        </div><!-- /magazine-grid -->
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div id="sin-resultados" class="text-center py-5 d-none">
+          <i class="fa-solid fa-magnifying-glass fa-2x mb-3" style="color:var(--muted)"></i>
+          <p class="text-muted">No hay artículos en esta categoría todavía.</p>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- ── Sección de comentarios ── -->
+        <section class="mt-5" id="comentarios">
+          <h3 class="fw-bold mb-4" style="color:var(--verde);">
+            <i class="fa-regular fa-comments me-2"></i>Comentarios
+          </h3>
+
+          <div class="comment reveal">
+            <div class="avatar-css avatar-a" aria-hidden="true"></div>
+            <div>
+              <p class="comment-meta mb-1">
+                <strong>Ana García</strong> &nbsp;·&nbsp;
+                <i class="fa-regular fa-clock me-1"></i>hace 2 días
+              </p>
+              <p class="mb-0">Me encantó el artículo sobre los senderos. ¡Ya lo guardé para mi próximo viaje a Jujuy!</p>
+            </div>
+          </div>
+
+          <div class="comment reveal" style="transition-delay:.1s">
+            <div class="avatar-css avatar-b" aria-hidden="true"></div>
+            <div>
+              <p class="comment-meta mb-1">
+                <strong>Leo Mamani</strong> &nbsp;·&nbsp;
+                <i class="fa-regular fa-clock me-1"></i>hace 4 días
+              </p>
+              <p class="mb-0">Muy completo el post de gastronomía, aunque faltó mencionar el mote con chicharrón jeje</p>
+            </div>
+          </div>
+
+          <div class="comment reveal" style="transition-delay:.2s">
+            <div class="avatar-css avatar-c" aria-hidden="true"></div>
+            <div>
+              <p class="comment-meta mb-1">
+                <strong>Valentina Torres</strong> &nbsp;·&nbsp;
+                <i class="fa-regular fa-clock me-1"></i>hace 1 semana
+              </p>
+              <p class="mb-0">El formato del blog está muy bien organizado. Fácil de leer desde el celular también 👌</p>
+            </div>
+          </div>
+
+        </section>
+      </div><!-- /col-lg-8 -->
+
+      <!-- ── Sidebar ── -->
+      <aside class="col-lg-4">
+
+        <!-- Categorías -->
+        <div class="sidebar-card reveal">
+          <h5><i class="fa-solid fa-tags me-2"></i>Categorías</h5>
+          <a href="#" class="sidebar-link filtro-link" data-filtro="todos">
+            <i class="fa-solid fa-border-all" style="color:var(--verde-claro)"></i> Todos los artículos
+          </a>
+          <a href="#" class="sidebar-link filtro-link" data-filtro="naturaleza">
+            <i class="fa-solid fa-tree" style="color:var(--verde)"></i> Naturaleza
+          </a>
+          <a href="#" class="sidebar-link filtro-link" data-filtro="cultura">
+            <i class="fa-solid fa-landmark" style="color:var(--amarillo)"></i> Cultura
+          </a>
+          <a href="#" class="sidebar-link filtro-link" data-filtro="tips">
+            <i class="fa-solid fa-lightbulb" style="color:#4cc9f0"></i> Tips de Viaje
+          </a>
+          <a href="#" class="sidebar-link filtro-link" data-filtro="gastronomia">
+            <i class="fa-solid fa-utensils" style="color:#e76f51"></i> Gastronomía
+          </a>
+        </div>
+
+        <!-- Artículos recientes -->
+        <div class="sidebar-card reveal" style="transition-delay:.15s">
+          <h5><i class="fa-solid fa-clock-rotate-left me-2"></i>Recientes</h5>
+          <a href="#" class="sidebar-link">
+            <i class="fa-regular fa-file-lines" style="color:var(--muted)"></i>
+            Los senderos secretos de las Yungas
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-regular fa-file-lines" style="color:var(--muted)"></i>
+            Tres sabores que tenés que probar
+          </a>
+          <a href="#" class="sidebar-link">
+            <i class="fa-regular fa-file-lines" style="color:var(--muted)"></i>
+            Cómo preparar tu mochila para la puna
+          </a>
+        </div>
+
+        <!-- Suscripción rápida -->
+        <div class="sidebar-card reveal" style="transition-delay:.3s; background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%); color:#fff; border:none;">
+          <h5 style="color:#fff;"><i class="fa-solid fa-bell me-2"></i>Recibí novedades</h5>
+          <p class="small mb-3" style="opacity:.85">Suscribite y recibí los artículos nuevos en tu correo.</p>
+          <div class="input-group">
+            <input type="email" class="form-control form-control-sm" placeholder="tu@email.com" id="suscripcionEmail" />
+            <button class="btn btn-light btn-sm fw-bold" id="btnSuscribir">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <p id="msg-suscripcion" class="small mt-2 mb-0" style="color:#a5d6a7; display:none;">
+            <i class="fa-solid fa-check me-1"></i>¡Gracias por suscribirte!
+          </p>
+        </div>
+
+      </aside>
+
+    </div><!-- /row -->
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <h5><i class="fa-solid fa-envelope me-2"></i>Newsletter</h5>
+          <form id="footerForm">
+            <div class="mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="tu@email.com" required />
+            </div>
+            <div class="mb-2">
+              <textarea class="form-control form-control-sm" rows="2" placeholder="Mensaje (opcional)"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light btn-sm fw-bold">
+              <i class="fa-solid fa-paper-plane me-1"></i>Enviar
+            </button>
+          </form>
+        </div>
+
+        <div class="col-md-4">
+          <h5><i class="fa-solid fa-share-nodes me-2"></i>Redes sociales</h5>
+          <div class="footer-social mt-2">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <p class="small mt-3" style="opacity:.7;">Seguinos para ver fotos, videos y las últimas novedades del destino.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h5><i class="fa-solid fa-location-dot me-2"></i>Ubicación</h5>
+          <div style="border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,.2);">
+            <iframe
+              title="Mapa San Salvador de Jujuy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-65.310%2C-24.205%2C-65.280%2C-24.165&layer=mapnik"
+              width="100%" height="180" style="border:0; display:block;"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">© 2026 Yungas Verdes — TP Bootstrap / UNJu &nbsp;|&nbsp;
+          <i class="fa-solid fa-leaf me-1"></i>Turismo Responsable
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════ -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </body>
 </html>
