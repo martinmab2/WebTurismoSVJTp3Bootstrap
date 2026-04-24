@@ -439,3 +439,269 @@
 
     /* Ocultar artículos filtrados */
     .post-item.oculto { display: none !important; }
+
+    /* ── TABLA DE PRECIOS ── */
+    .tabla-precios {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(45, 106, 79, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tabla-precios thead {
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%);
+      color: #fff;
+    }
+
+    .tabla-precios th {
+      padding: 24px 16px;
+      text-align: center;
+      font-weight: 700;
+      border: none;
+    }
+
+    .tabla-precios th:first-child {
+      text-align: left;
+      background: var(--verde);
+    }
+
+    .plan-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .plan-header i {
+      font-size: 1.3rem;
+    }
+
+    .plan-featured {
+      background: linear-gradient(135deg, var(--amarillo) 0%, #f4a261 100%);
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .plan-precio {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      margin: 8px 0;
+    }
+
+    .plan-duracion {
+      opacity: 0.85;
+      display: block;
+      font-size: 0.85rem;
+    }
+
+    .tabla-precios tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tabla-precios tbody tr:hover {
+      background: rgba(45, 106, 79, 0.05);
+    }
+
+    .tabla-precios tbody tr.table-hover-active {
+      background: rgba(45, 106, 79, 0.08);
+      box-shadow: inset 0 0 12px rgba(45, 106, 79, 0.1);
+    }
+
+    .tabla-precios td {
+      padding: 18px 16px;
+      color: var(--texto);
+      border: none;
+    }
+
+    .tabla-precios td:first-child {
+      font-weight: 600;
+      color: var(--verde);
+      width: 200px;
+    }
+
+    .tabla-precios td[data-label="Premium"],
+    .tabla-precios th.plan-premium {
+      background: rgba(45, 106, 79, 0.04);
+    }
+
+    .tabla-precios td.highlight {
+      font-weight: 600;
+      color: var(--verde);
+    }
+
+    /* Responsive tabla */
+    @media (max-width: 992px) {
+      .tabla-precios {
+        font-size: 0.9rem;
+      }
+
+      .tabla-precios th,
+      .tabla-precios td {
+        padding: 14px 10px;
+      }
+
+      .tabla-precios td:first-child {
+        width: 150px;
+      }
+
+      .plan-precio {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .table-responsive {
+        margin: -20px -15px;
+        padding: 0 15px;
+      }
+
+      .tabla-precios {
+        margin: 0;
+      }
+
+      .tabla-precios thead {
+        display: none;
+      }
+
+      .tabla-precios tbody,
+      .tabla-precios tr,
+      .tabla-precios td {
+        display: block;
+        width: 100%;
+      }
+
+      .tabla-precios tr {
+        margin-bottom: 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .tabla-precios td {
+        text-align: right;
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .tabla-precios td:last-child {
+        border-bottom: none;
+      }
+
+      .tabla-precios td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 700;
+        color: var(--verde);
+      }
+
+      .tabla-precios td[data-label="Premium"],
+      .tabla-precios td[data-label]:before {
+        background: transparent;
+      }
+    }
+
+    /* ── TARJETAS DE OFERTA ── */
+    .oferta-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 2px solid var(--border);
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .oferta-card:hover {
+      border-color: var(--verde-claro);
+      box-shadow: 0 8px 24px rgba(45, 106, 79, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .oferta-icono {
+      font-size: 2.5rem;
+      color: var(--verde);
+      margin-bottom: 16px;
+    }
+
+    .oferta-card h4 {
+      color: var(--verde);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* ── PLAN CARD (Mobile) ── */
+    .plan-card {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .plan-card:hover {
+      border-color: var(--verde-claro);
+      box-shadow: 0 8px 24px rgba(45, 106, 79, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .plan-card-featured {
+      border: 2px solid var(--verde);
+      background: linear-gradient(135deg, rgba(45, 106, 79, 0.02) 0%, rgba(82, 183, 136, 0.02) 100%);
+    }
+
+    .badge-featured {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, var(--amarillo) 0%, #f4a261 100%);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .plan-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .plan-card-header i {
+      font-size: 1.5rem;
+      color: var(--verde);
+    }
+
+    .plan-card-header h4 {
+      margin: 0;
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .plan-card-precio {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--verde);
+      margin-bottom: 8px;
+    }
+
+    .plan-card ul li {
+      margin-bottom: 8px;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .plan-card ul li i {
+      margin-right: 8px;
+    }
