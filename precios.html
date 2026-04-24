@@ -10,20 +10,29 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav>
-        <div class="">
-            <a href="#">Yungas Verdes</a>
-            <button type="button">
-                <span></span>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-leaf me-1"></i>Yungas Verdes
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                class="fa-solid fa-house me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinos.html"><i
+                                class="fa-solid fa-map-location-dot me-1"></i>Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agencias.html"><i
+                                class="fa-solid fa-building me-1"></i>Agencias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="precios.html"><i
+                                class="fa-solid fa-tag me-1"></i>Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i
+                                class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html"><i
+                                class="fa-solid fa-newspaper me-1"></i>Blog</a></li>
                 </ul>
             </div>
         </div>
