@@ -47,6 +47,57 @@
       max-width: 50ch;
     }
 
+    /* ── Hero del index ── */
+
+    .hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+  .hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    }
+
+  .hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    }
+
+  .hero-title {
+    font-size: 3rem;
+    opacity: 0;
+    }
+
+  .hero-subtitle {
+    opacity: 0;
+    }
+
+  .btn-hero {
+    background: var(--amarillo);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    opacity: 0;
+    }
+
     /* ── Filtros ── */
     .filtros-wrap {
       background: #fff;
@@ -94,6 +145,35 @@
       .post-featured,
       .post-secondary { grid-column: span 12; }
     }
+
+    /*--cards del index--*/
+  .destino-card {
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .destino-card img {
+    transition: transform 0.5s ease;
+  }
+
+  .destino-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .destino-card:hover img {
+    transform: scale(1.1);
+  }
+
+  .destino-card .card-body {
+    transition: background 0.3s;
+  }
+
+  .destino-card:hover .card-body {
+    background: var(--verde-claro);
+    color: #fff;
+  }
 
     /* ── Tarjeta de artículo ── */
     .post-card {
@@ -280,6 +360,24 @@
       color: rgba(255,255,255,.6);
       text-align: center;
     }
+
+    /* Carrusel del index */  
+
+  .carousel-item {
+    padding: 40px;
+    transition: transform 0.6s ease, opacity 0.6s;
+  }
+
+  .carousel-item p {
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  .carousel-item cite {
+    display: block;
+    margin-top: 10px;
+    color: var(--verde);
+  }
 
     /* Ocultar artículos filtrados */
     .post-item.oculto { display: none !important; }

@@ -94,3 +94,60 @@ $(function () {
     });
 
   });
+
+  $(document).ready(function () {
+
+  $(".hero-title").delay(200).animate({
+    opacity: 1,
+    top: "-=10"
+  }, 1000);
+
+  $(".hero-subtitle").delay(600).animate({
+    opacity: 1
+  }, 1000);
+
+  $(".btn-hero").delay(1000).animate({
+    opacity: 1
+  }, 800);
+
+});
+
+function animarContador(id, objetivo, duracion) {
+  let actual = 0;
+  let incremento = objetivo / (duracion / 50);
+
+  let intervalo = setInterval(function () {
+    actual += incremento;
+    if (actual >= objetivo) {
+      actual = objetivo;
+      clearInterval(intervalo);
+    }
+    $(id).text(Math.floor(actual));
+  }, 50);
+}
+
+// Detectar cuando entra en pantalla
+$(window).on("scroll", function () {
+  let trigger = $("#counter1").offset().top - window.innerHeight;
+
+  if ($(window).scrollTop() > trigger) {
+    animarContador("#counter1", 1500, 2000);
+    animarContador("#counter2", 120, 2000);
+    animarContador("#counter3", 45, 2000);
+    animarContador("#counter4", 10, 2000);
+
+    $(window).off("scroll"); // evitar repetir
+  }
+});
+
+$(window).on("scroll", function () {
+  $(".reveal").each(function () {
+    let top = $(this).offset().top;
+    let scroll = $(window).scrollTop();
+    let height = $(window).height();
+
+    if (scroll + height > top + 50) {
+      $(this).addClass("visible");
+    }
+  });
+});
