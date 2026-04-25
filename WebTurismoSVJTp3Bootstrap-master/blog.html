@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Yungas Verdes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="">
+            <a href="#">Yungas Verdes</a>
+            <button type="button">
+                <span></span>
+            </button>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="agencias.html">Agencias</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="precios.html">Precios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filtro de Categorías -->
+    <section>
+        <div class="">
+            <div>
+                <div>
+                    <select id="filtroCategoriaBlog">
+                        <option value="">Todas las categorías</option>
+                        <option value="naturaleza">Naturaleza</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="tips">Tips de Viaje</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artículos del Blog -->
+    <section>
+        <div class="">
+            <div>
+                <div>
+                    <article data-categoria="naturaleza">
+                        <h2>Título del Artículo 1</h2>
+                        <p>Fecha de publicación</p>
+                        <img src="blog1.jpg" alt="Imagen del artículo">
+                        <p>Contenido del artículo...</p>
+                        <div>
+                            <h4>Comentarios</h4>
+                            <div>
+                                <p><strong>Usuario:</strong> Excelente artículo!</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article data-categoria="cultura">
+                        <h2>Título del Artículo 2</h2>
+                        <p>Fecha de publicación</p>
+                        <img src="blog2.jpg" alt="Imagen del artículo">
+                        <p>Contenido del artículo...</p>
+                        <div>
+                            <h4>Comentarios</h4>
+                            <div>
+                                <p><strong>Usuario:</strong> Muy informativo.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div>
+                    <div>
+                        <h3>Categorías</h3>
+                        <ul>
+                            <li><a href="#" data-categoria="naturaleza">Naturaleza</a></li>
+                            <li><a href="#" data-categoria="cultura">Cultura</a></li>
+                            <li><a href="#" data-categoria="tips">Tips de Viaje</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulo Educativo Phishing -->
+    <section>
+        <div class="">
+            <h2>Simulación de Phishing</h2>
+            <div>
+                <button data-bs-toggle="modal" data-bs-target="#phishingModal">Simulación de Phishing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Phishing -->
+    <div id="phishingModal">
+        <div>
+            <div>
+                <div>
+                    <h5>Advertencia: Simulación Educativa</h5>
+                    <button type="button"></button>
+                </div>
+                <div>
+                    <p><strong>Esta es una simulación educativa sobre phishing. NO se recopilan datos reales.</strong></p>
+                    <h6>Ejemplos de Señales de Fraude:</h6>
+                    <ul>
+                        <li>Emails de remitentes desconocidos pidiendo información personal.</li>
+                        <li>Enlaces sospechosos que no coinciden con el dominio oficial.</li>
+                        <li>Urgencia para proporcionar datos.</li>
+                    </ul>
+                    <p>Identifica los errores en el siguiente ejemplo:</p>
+                    <div id="phishingExample">
+                        <p>Email: "Actualiza tu cuenta en yungasverdes-fake.com"</p>
+                        <button id="error1">Error: Dominio falso</button>
+                        <button id="correct1">Correcto</button>
+                    </div>
+                    <div id="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="">
+            <div class="">
+                <div class="">
+                    <h5>Contacto</h5>
+                    <form>
+                        <div class="">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="">
+                            <textarea rows="3" placeholder="Mensaje"></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+                <div class="">
+                    <h5>Redes Sociales</h5>
+                    <a href="#"><i></i></a>
+                    <a href="#"><i></i></a>
+                    <a href="#"><i></i></a>
+                </div>
+                <div class="">
+                    <h5>Mapa</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
