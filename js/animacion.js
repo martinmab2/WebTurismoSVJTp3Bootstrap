@@ -151,3 +151,54 @@ $(window).on("scroll", function () {
     }
   });
 });
+
+$(document).ready(function() {
+    const $form = $('#contactForm');
+    const $modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+    // 1. Validación en tiempo real con .on('input')
+    $('input, textarea').on('input', function() {
+        const input = $(this);
+        const isValid = input[0].checkValidity();
+
+        if (isValid) {
+            input.addClass('is-valid').removeClass('is-invalid');
+        } else {
+            input.addClass('is-invalid').removeClass('is-valid');
+        }
+    });
+
+    // 2. Manejo del Submit
+    $form.on('submit', function(e) {
+        e.preventDefault();
+        
+        // Sanitización básica de valores
+        const nombre = $('#nombre').val().trim();
+        const email = $('#email').val().trim();
+        const mensaje = $('#mensaje').val().trim();
+
+        if (this.checkValidity()) {
+            // Mostrar Spinner
+            $('#spinner').removeClass('d-none');
+            $('#btnText').text('Enviando...');
+            $('#btnEnviar').prop('disabled', true);
+
+            // Simulación de envío
+            setTimeout(function() {
+                
+                $('#spinner').addClass('d-none');
+                $('#btnText').text('Enviar');
+                $('#btnEnviar').prop('disabled', false);
+                
+                // Mostrar Modal y resetear formulario
+                $modal.show();
+                $form[0].reset();
+                $('.form-control').removeClass('is-valid is-invalid');
+            }, 2000);
+
+        } else {
+            // Si el formulario no es válido, forzar estilos de Bootstrap
+            $form.addClass('was-validated');
+        }
+    });
+});
