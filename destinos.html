@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+<style>
+        /* Grid responsive */
+        #destinosGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card estilo */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        /* Zoom en imagen */
+        .card img {
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        .card img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 <body>
     <!-- Navbar -->
     <nav>
@@ -29,57 +54,57 @@
         </div>
     </nav>
 
+   
+</head>
+<body class="container my-4">
+
     <!-- Filtros -->
-    <section>
-        <div class="">
-            <div class="">
-                <div class="">
-                    <select id="filtroCategoria">
-                        <option value="">Todas las categorías</option>
-                        <option value="naturaleza">Naturaleza</option>
-                        <option value="cultura">Cultura</option>
-                        <option value="aventura">Aventura</option>
-                    </select>
-                </div>
-                <div class="">
-                    <input type="text" id="busqueda" placeholder="Buscar destino">
-                </div>
+    <section class="mb-4">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <select id="filtroCategoria" class="form-select">
+                    <option value="">Todas las categorías</option>
+                    <option value="naturaleza">Naturaleza</option>
+                    <option value="cultura">Cultura</option>
+                    <option value="aventura">Aventura</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="text" id="busqueda" class="form-control" placeholder="Buscar destino">
             </div>
         </div>
     </section>
 
     <!-- Grid de Destinos -->
     <section>
-        <div class="">
-            <div id="destinosGrid">
-                <div>
-                    <div>
-                        <img src="destino1.jpg" alt="Destino 1">
-                        <div>
-                            <h5>Destino 1</h5>
-                            <p>Descripción del destino.</p>
-                            <p><small>Precio: $100</small></p>
-                        </div>
+        <div id="destinosGrid">
+            <div class="naturaleza">
+                <div class="card">
+                    <img src="img/elcarmen.jpg" alt="El Carmen">
+                    <div class="p-3">
+                        <h5>El Carmen</h5>
+                        <p>Descripción del destino.</p>
+                        <p><small>Precio: $100</small></p>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <img src="destino2.jpg" alt="Destino 2">
-                        <div>
-                            <h5>Destino 2</h5>
-                            <p>Descripción del destino.</p>
-                            <p><small>Precio: $150</small></p>
-                        </div>
+            </div>
+            <div class="cultura">
+                <div class="card">
+                    <img src="img/lagunadepozuelos.jpg" alt="Laguna de Pozuelos">
+                    <div class="p-3">
+                        <h5>Laguna de Pozuelos</h5>
+                        <p>Descripción del destino.</p>
+                        <p><small>Precio: $150</small></p>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <img src="destino3.jpg" alt="Destino 3">
-                        <div>
-                            <h5>Destino 3</h5>
-                            <p>Descripción del destino.</p>
-                            <p><small>Precio: $200</small></p>
-                        </div>
+            </div>
+            <div class="aventura">
+                <div class="card">
+                    <img src="img/purmamarca.jpg" alt="Purmamarca">
+                    <div class="p-3">
+                        <h5>Purmamarca</h5>
+                        <p>Descripción del destino.</p>
+                        <p><small>Precio: $200</small></p>
                     </div>
                 </div>
             </div>
@@ -87,41 +112,39 @@
     </section>
 
     <!-- Tabla de Precios -->
-    <section>
-        <div class="">
-            <h2>Tabla de Precios</h2>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Destino</th>
-                            <th>Precio Básico</th>
-                            <th>Precio Premium</th>
-                            <th>Duración</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Destino 1</td>
-                            <td>$100</td>
-                            <td>$150</td>
-                            <td>2 días</td>
-                        </tr>
-                        <tr>
-                            <td>Destino 2</td>
-                            <td>$150</td>
-                            <td>$200</td>
-                            <td>3 días</td>
-                        </tr>
-                        <tr>
-                            <td>Destino 3</td>
-                            <td>$200</td>
-                            <td>$250</td>
-                            <td>4 días</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <section class="mt-5">
+        <h2>Tabla de Precios</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Destino</th>
+                        <th>Precio Básico</th>
+                        <th>Precio Premium</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>El Carmen</td>
+                        <td>$100</td>
+                        <td>$150</td>
+                        <td>2 días</td>
+                    </tr>
+                    <tr>
+                        <td>Laguna de Pozuelos</td>
+                        <td>$150</td>
+                        <td>$200</td>
+                        <td>3 días</td>
+                    </tr>
+                    <tr>
+                        <td>Purmamarca</td>
+                        <td>$200</td>
+                        <td>$250</td>
+                        <td>4 días</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
     <footer>
@@ -153,5 +176,25 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- jQuery Filtros -->
+    <script>
+        $(document).ready(function() {
+            // Filtro por categoría
+            $("#filtroCategoria").on("change", function() {
+                var categoria = $(this).val();
+                $("#destinosGrid > div").show().filter(function() {
+                    return categoria && !$(this).hasClass(categoria);
+                }).hide();
+            });
+
+            // Filtro por búsqueda
+            $("#busqueda").on("keyup", function() {
+                var texto = $(this).val().toLowerCase();
+                $("#destinosGrid > div").show().filter(function() {
+                    return $(this).text().toLowerCase().indexOf(texto) === -1;
+                }).hide();
+            });
+        });
+    </script>
 </body>
 </html>
