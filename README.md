@@ -115,26 +115,26 @@ Estudiantes avanzados de la carrera Analista Programador Universitario – Facul
 ---
 ## ✅ Checklist de Implementación
 
-- [ ] Navbar responsive con dropdown/mega menú (Bootstrap)  
-- [ ] Hero con imagen/video + texto animado (jQuery)  
-- [ ] Cards de destinos con hover  
-- [ ] Contador animado (jQuery)  
-- [ ] Carousel de testimonios  
-- [ ] Footer con formulario, redes sociales y mapa embebido  
-- [ ] Filtros dinámicos en Destinos (jQuery)  
-- [ ] Grid responsive adaptable a 1, 2 o 3 columnas  
-- [ ] Cards con zoom (CSS + jQuery)  
-- [ ] Tabla de precios responsive  
-- [ ] Cards con efecto flip en Agencias  
-- [ ] Sistema de rating con estrellas (jQuery)  
-- [ ] Formulario con validación en tiempo real (jQuery + HTML5)  
-- [ ] Spinner de carga y modal de confirmación  
-- [ ] Tabla comparativa en Precios con tooltips dinámicos  
-- [ ] Blog con layout tipo revista y filtro por categorías  
-- [ ] Animaciones al hacer scroll  
-- [ ] Módulo educativo de phishing con modal Bootstrap y feedback jQuery  
-- [ ] Implementación de iconos (Font Awesome / Bootstrap Icons)  
-- [ ] Sprite CSS para redes sociales y botones  
-- [ ] Validación y sanitización de inputs  
-- [ ] Sitio publicado en GitHub Pages  
-- [ ] Video presentación del proyecto  
+- [x] Navbar responsive con dropdown/mega menú (Bootstrap)  
+- [x] Hero con imagen/video + texto animado (jQuery)  
+- [x] Cards de destinos con hover  
+- [x] Contador animado (jQuery)  
+- [x] Carousel de testimonios  
+- [x] Footer con formulario, redes sociales y mapa embebido  
+- [x] Filtros dinámicos en Destinos (jQuery)  
+- [x] Grid responsive adaptable a 1, 2 o 3 columnas  
+- [x] Cards con zoom (CSS + jQuery)  
+- [x] Tabla de precios responsive  
+- [x] Cards con efecto flip en Agencias  
+- [x] Sistema de rating con estrellas (jQuery)  
+- [x] Formulario con validación en tiempo real (jQuery + HTML5)  
+- [x] Spinner de carga y modal de confirmación  
+- [x] Tabla comparativa en Precios con tooltips dinámicos  
+- [x] Blog con layout tipo revista y filtro por categorías  
+- [x] Animaciones al hacer scroll  
+- [x] Módulo educativo de phishing con modal Bootstrap y feedback jQuery  
+- [x] Implementación de iconos (Font Awesome / Bootstrap Icons)  
+- [x] Sprite CSS para redes sociales y botones  
+- [x] Validación y sanitización de inputs  
+- [x] Sitio publicado en GitHub Pages  
+- [x] Video presentación del proyecto  
