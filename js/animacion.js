@@ -242,3 +242,32 @@ $("#busqueda").on("keyup", function () {
     $(this).toggle(contenido.includes(texto));
   });
 });
+
+$(document).on('click', '#verificarPhishing', function (e) {
+  e.preventDefault();
+
+  const respuestas = [];
+
+  $('.phishing-check:checked').each(function () {
+    respuestas.push($(this).val());
+  });
+
+  const correctas = ['link', 'urgencia', 'datos'];
+  const aciertos = respuestas.filter(r => correctas.includes(r)).length;
+
+  if (aciertos === 3) {
+    $('#phishingFeedback')
+      .removeClass('text-danger')
+      .addClass('text-success')
+      .html('✅ ¡Correcto! Identificaste todas las señales de phishing.');
+  } else {
+    $('#phishingFeedback')
+      .removeClass('text-success')
+      .addClass('text-danger')
+      .html('⚠️ Te faltaron señales importantes.');
+  }
+
+  setTimeout(() => {
+    $('.phishing-check').prop('checked', false);
+  }, 1500);
+});
