@@ -84,8 +84,7 @@ El sitio se adapta correctamente a **Mobile, Tablet, Desktop y pantallas grandes
 ---
 
 ## 🚀 Demo
-👉 [Ver sitio en GitHub Pages](https://martinmab2.github.io/YungasVerdes) *(link de ejemplo, actualizar con tu repo real)*
-
+👉 (https://martinmab2.github.io/WebTurismoSVJTp3Bootstrap/)
 ------
 
 ## 👨‍💻 Autores
