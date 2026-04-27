@@ -1,101 +1,101 @@
 $(function () {
 
-    /* ──────────────────────────────────────
-       1. FILTRO POR CATEGORÍAS (jQuery)
-    ────────────────────────────────────── */
-    function filtrar(cat) {
-      // Actualiza botones activos
-      $('.btn-filtro, .filtro-link').removeClass('activo');
-      $('[data-filtro="' + cat + '"]').addClass('activo');
+  /* ──────────────────────────────────────
+     1. FILTRO POR CATEGORÍAS (jQuery)
+  ────────────────────────────────────── */
+  function filtrar(cat) {
+    // Actualiza botones activos
+    $('.btn-filtro, .filtro-link').removeClass('activo');
+    $('[data-filtro="' + cat + '"]').addClass('activo');
 
-      const $items = $('.post-item');
+    const $items = $('.post-item');
 
-      if (cat === 'todos') {
-        $items.show().removeClass('oculto');
-      } else {
-        $items.each(function () {
-          if ($(this).data('cat') === cat) {
-            $(this).show().removeClass('oculto');
-          } else {
-            $(this).hide().addClass('oculto');
-          }
-        });
-      }
-
-      // Mostrar mensaje si no hay resultados
-      const visibles = $('.post-item:visible').length;
-      if (visibles === 0) {
-        $('#sin-resultados').removeClass('d-none');
-      } else {
-        $('#sin-resultados').addClass('d-none');
-      }
-    }
-
-    // Click en botones de filtro (barra superior)
-    $('.btn-filtro').on('click', function () {
-      filtrar($(this).data('filtro'));
-    });
-
-    // Click en links del sidebar
-    $('.filtro-link').on('click', function (e) {
-      e.preventDefault();
-      filtrar($(this).data('filtro'));
-      // Scroll suave hacia los artículos
-      $('html, body').animate({ scrollTop: $('#articulos-grid').offset().top - 80 }, 400);
-    });
-
-
-    /* ──────────────────────────────────────
-       2. SCROLL REVEAL (jQuery + IntersectionObserver)
-    ────────────────────────────────────── */
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            $(entry.target).addClass('visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
-
-      $('.reveal').each(function () {
-        io.observe(this);
-      });
+    if (cat === 'todos') {
+      $items.show().removeClass('oculto');
     } else {
-      // Fallback para navegadores sin soporte
-      $('.reveal').addClass('visible');
+      $items.each(function () {
+        if ($(this).data('cat') === cat) {
+          $(this).show().removeClass('oculto');
+        } else {
+          $(this).hide().addClass('oculto');
+        }
+      });
     }
 
+    // Mostrar mensaje si no hay resultados
+    const visibles = $('.post-item:visible').length;
+    if (visibles === 0) {
+      $('#sin-resultados').removeClass('d-none');
+    } else {
+      $('#sin-resultados').addClass('d-none');
+    }
+  }
 
-    /* ──────────────────────────────────────
-       3. SUSCRIPCIÓN SIDEBAR (jQuery)
-    ────────────────────────────────────── */
-    $('#btnSuscribir').on('click', function () {
-      const email = $('#suscripcionEmail').val().trim();
-      if (email && email.includes('@')) {
-        $('#suscripcionEmail').val('').prop('disabled', true);
-        $('#msg-suscripcion').fadeIn();
-      } else {
-        $('#suscripcionEmail').addClass('is-invalid');
-        setTimeout(function () {
-          $('#suscripcionEmail').removeClass('is-invalid');
-        }, 1500);
-      }
-    });
-
-
-    /* ──────────────────────────────────────
-       4. FOOTER FORM (demo, jQuery)
-    ────────────────────────────────────── */
-    $('#footerForm').on('submit', function (e) {
-      e.preventDefault();
-      const $btn = $(this).find('button[type="submit"]');
-      $btn.html('<i class="fa-solid fa-check me-1"></i>Enviado').prop('disabled', true);
-    });
-
+  // Click en botones de filtro (barra superior)
+  $('.btn-filtro').on('click', function () {
+    filtrar($(this).data('filtro'));
   });
 
-  $(document).ready(function () {
+  // Click en links del sidebar
+  $('.filtro-link').on('click', function (e) {
+    e.preventDefault();
+    filtrar($(this).data('filtro'));
+    // Scroll suave hacia los artículos
+    $('html, body').animate({ scrollTop: $('#articulos-grid').offset().top - 80 }, 400);
+  });
+
+
+  /* ──────────────────────────────────────
+     2. SCROLL REVEAL (jQuery + IntersectionObserver)
+  ────────────────────────────────────── */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          $(entry.target).addClass('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+
+    $('.reveal').each(function () {
+      io.observe(this);
+    });
+  } else {
+    // Fallback para navegadores sin soporte
+    $('.reveal').addClass('visible');
+  }
+
+
+  /* ──────────────────────────────────────
+     3. SUSCRIPCIÓN SIDEBAR (jQuery)
+  ────────────────────────────────────── */
+  $('#btnSuscribir').on('click', function () {
+    const email = $('#suscripcionEmail').val().trim();
+    if (email && email.includes('@')) {
+      $('#suscripcionEmail').val('').prop('disabled', true);
+      $('#msg-suscripcion').fadeIn();
+    } else {
+      $('#suscripcionEmail').addClass('is-invalid');
+      setTimeout(function () {
+        $('#suscripcionEmail').removeClass('is-invalid');
+      }, 1500);
+    }
+  });
+
+
+  /* ──────────────────────────────────────
+     4. FOOTER FORM (demo, jQuery)
+  ────────────────────────────────────── */
+  $('#footerForm').on('submit', function (e) {
+    e.preventDefault();
+    const $btn = $(this).find('button[type="submit"]');
+    $btn.html('<i class="fa-solid fa-check me-1"></i>Enviado').prop('disabled', true);
+  });
+
+});
+
+$(document).ready(function () {
 
   $(".hero-title").delay(200).animate({
     opacity: 1,
@@ -152,53 +152,142 @@ $(window).on("scroll", function () {
   });
 });
 
-$(document).ready(function() {
-    const $form = $('#contactForm');
-    const $modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+document.addEventListener('DOMContentLoaded', function () {
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
-    // 1. Validación en tiempo real con .on('input')
-    $('input, textarea').on('input', function() {
-        const input = $(this);
-        const isValid = input[0].checkValidity();
+  // Hover dinámico en filas de tabla
+  $('.tabla-precios tbody tr').hover(
+    function () {
+      $(this).addClass('table-hover-active');
+    },
+    function () {
+      $(this).removeClass('table-hover-active');
+    }
+  );
+});
 
-        if (isValid) {
-            input.addClass('is-valid').removeClass('is-invalid');
-        } else {
-            input.addClass('is-invalid').removeClass('is-valid');
-        }
+$(document).ready(function () {
+  const $form = $('#contactForm');
+  const $modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+
+  // 1. Validación en tiempo real con .on('input')
+  $('input, textarea').on('input', function () {
+    const input = $(this);
+    const isValid = input[0].checkValidity();
+
+    if (isValid) {
+      input.addClass('is-valid').removeClass('is-invalid');
+    } else {
+      input.addClass('is-invalid').removeClass('is-valid');
+    }
+  });
+
+  // 2. Manejo del Submit
+  $form.on('submit', function (e) {
+    e.preventDefault();
+
+    // Sanitización básica de valores
+    const nombre = $('#nombre').val().trim();
+    const email = $('#email').val().trim();
+    const mensaje = $('#mensaje').val().trim();
+
+    if (this.checkValidity()) {
+      // Mostrar Spinner
+      $('#spinner').removeClass('d-none');
+      $('#btnText').text('Enviando...');
+      $('#btnEnviar').prop('disabled', true);
+
+      // Simulación de envío
+      setTimeout(function () {
+
+        $('#spinner').addClass('d-none');
+        $('#btnText').text('Enviar');
+        $('#btnEnviar').prop('disabled', false);
+
+        // Mostrar Modal y resetear formulario
+        $modal.show();
+        $form[0].reset();
+        $('.form-control').removeClass('is-valid is-invalid');
+      }, 2000);
+
+    } else {
+      // Si el formulario no es válido, forzar estilos de Bootstrap
+      $form.addClass('was-validated');
+    }
+  });
+
+});
+
+$(function () {
+  $('.flip-card').on('click', function (e) {
+    // Si el click fue en rating/botones/links, no hacer flip
+    if ($(e.target).closest('.rating, .rating-star, button, a').length) return;
+    $(this).find('.flip-card-inner').toggleClass('flipped');
+  });
+
+  // Rating con estrellas (Agencias)
+  function renderStars($rating, value) {
+    $rating.find('.rating-star').each(function () {
+      const starValue = Number($(this).data('value'));
+      const $icon = $(this).find('i');
+      if (starValue <= value) {
+        $icon.removeClass('fa-regular').addClass('fa-solid');
+      } else {
+        $icon.removeClass('fa-solid').addClass('fa-regular');
+      }
     });
+  }
 
-    // 2. Manejo del Submit
-    $form.on('submit', function(e) {
-        e.preventDefault();
-        
-        // Sanitización básica de valores
-        const nombre = $('#nombre').val().trim();
-        const email = $('#email').val().trim();
-        const mensaje = $('#mensaje').val().trim();
+  $(document).on('mouseover', '.rating', function (e) {
+    const $btn = $(e.target).closest('.rating-star');
+    if (!$btn.length) return;
+    const $card = $btn.closest('.flip-card');
+    const $rating = $btn.closest('.rating');
+    const hoverValue = Number($btn.data('value'));
+    const selectedValue = Number($card.data('rating') || 0);
+    renderStars($rating, hoverValue || selectedValue);
+  });
 
-        if (this.checkValidity()) {
-            // Mostrar Spinner
-            $('#spinner').removeClass('d-none');
-            $('#btnText').text('Enviando...');
-            $('#btnEnviar').prop('disabled', true);
+  $(document).on('mouseleave', '.rating', function () {
+    const $card = $(this).closest('.flip-card');
+    const selectedValue = Number($card.data('rating') || 0);
+    renderStars($(this), selectedValue);
+  });
 
-            // Simulación de envío
-            setTimeout(function() {
-                
-                $('#spinner').addClass('d-none');
-                $('#btnText').text('Enviar');
-                $('#btnEnviar').prop('disabled', false);
-                
-                // Mostrar Modal y resetear formulario
-                $modal.show();
-                $form[0].reset();
-                $('.form-control').removeClass('is-valid is-invalid');
-            }, 2000);
+  $(document).on('click', '.rating', function (e) {
+    const $btn = $(e.target).closest('.rating-star');
+    if (!$btn.length) return;
+    e.preventDefault();
+    e.stopPropagation();
 
-        } else {
-            // Si el formulario no es válido, forzar estilos de Bootstrap
-            $form.addClass('was-validated');
-        }
-    });
+    const $card = $btn.closest('.flip-card');
+    const value = Number($btn.data('value'));
+    const $rating = $btn.closest('.rating');
+
+    $card.data('rating', value);
+    renderStars($rating, value);
+
+    const agencia = $card.data('agencia') || 'Agencia';
+    $card.find('.rating-label').text(`Calificaste ${agencia} con ${value} estrella${value === 1 ? '' : 's'}.`);
+  });
+
+  // Evitar que links internos disparen flip (opcional)
+  $(document).on('click', '.flip-card a', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  // Botón "Calificar" (dorso): volver al frente y enfocar estrellas
+  $(document).on('click', '.js-calificar', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const $card = $(this).closest('.flip-card');
+    $card.find('.flip-card-inner').removeClass('flipped');
+    setTimeout(function () {
+      $card.find('.rating-star').first().trigger('focus');
+    }, 50);
+  });
 });

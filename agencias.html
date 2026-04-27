@@ -1,142 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agencias - Yungas Verdes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav>
-        <div class="">
-            <a href="#">Yungas Verdes</a>
-            <button type="button">
-                <span></span>
-            </button>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Agencias Cards -->
-    <section>
-        <div class="">
-            <h2>Nuestras Agencias</h2>
-            <div>
-                <div>
-                    <div>
-                        <div>
-                            <img src="agencia1.jpg" alt="Agencia 1">
-                            <div>
-                                <h5>Agencia 1</h5>
-                                <p>Descripción de la agencia.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h5>Más Información</h5>
-                                <p>Detalles adicionales.</p>
-                                <div>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            <img src="agencia2.jpg" alt="Agencia 2">
-                            <div>
-                                <h5>Agencia 2</h5>
-                                <p>Descripción de la agencia.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h5>Más Información</h5>
-                                <p>Detalles adicionales.</p>
-                                <div>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>
-                            <img src="agencia3.jpg" alt="Agencia 3">
-                            <div>
-                                <h5>Agencia 3</h5>
-                                <p>Descripción de la agencia.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h5>Más Información</h5>
-                                <p>Detalles adicionales.</p>
-                                <div>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencias - Yungas Verdes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-leaf me-1"></i>Yungas Verdes
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="destinos.html"><i
+                class="fa-solid fa-map-location-dot me-1"></i>Destinos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="agencias.html"><i
+                class="fa-solid fa-building me-1"></i>Agencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="precios.html"><i class="fa-solid fa-tag me-1"></i>Precios</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html"><i
+                class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper me-1"></i>Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="container">
+      <p class="text-uppercase fw-bold small mb-2" style="letter-spacing:.12em; opacity:.8;">
+        <i class="fa-solid fa-feather me-1"></i>Chequea nuestras agencias
+      </p>
+      <h1>Agencias disponibles</h1>
+      <p>Descubre las mejores agencias de viaje en Jujuy y planifica tu próxima aventura.</p>
+    </div>
+  </section>
+
+  <div class="row g-4 mb-5 p-4 mx-5">
+
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="flip-card" data-agencia="Puna Expediciones">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="agency-cover" aria-hidden="true">
+              <img src="img/salinasgrandes.webp" alt="">
             </div>
-        </div>
-    </section>
-    <footer>
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h5>Contacto</h5>
-                    <form>
-                        <div class="">
-                            <input type="email" placeholder="Email">
-                        </div>
-                        <div class="">
-                            <textarea rows="3" placeholder="Mensaje"></textarea>
-                        </div>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="">
-                    <h5>Redes Sociales</h5>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                </div>
-                <div class="">
-                    <h5>Mapa</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <h5 class="card-title mb-0">Puna Expediciones</h5>
+              <span class="agency-pill"><i class="fa-solid fa-mountain" aria-hidden="true"></i>Aventura</span>
             </div>
+            <p class="text-muted">Expediciones a la Puna jujeña: Salinas Grandes, Susques y el altiplano con guías
+              especializados.</p>
+            <div class="agency-meta">
+              <span class="agency-pill"><i class="fa-solid fa-jeep" aria-hidden="true"></i>4x4</span>
+              <span class="agency-pill"><i class="fa-solid fa-people-group" aria-hidden="true"></i>Guiadas</span>
+              <span class="agency-pill"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i>Fotos</span>
+            </div>
+            <ul class="list-unstyled small mt-2 mb-0 text-muted">
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-solid fa-location-dot mt-1" aria-hidden="true"></i>
+                <span>San Salvador de Jujuy — Puna y Quebrada</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-regular fa-clock mt-1" aria-hidden="true"></i>
+                <span>Lun a Sáb, 8:00–18:00</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start">
+                <i class="fa-solid fa-shield-heart mt-1" aria-hidden="true"></i>
+                <span>Guías certificados · Seguro de viaje incluido</span>
+              </li>
+            </ul>
+            <div class="mt-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="small text-muted">Tu rating:</span>
+                <div class="rating" role="radiogroup" aria-label="Calificación en estrellas">
+                  <button type="button" class="rating-star" data-value="1" aria-label="1 estrella"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="2" aria-label="2 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="3" aria-label="3 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="4" aria-label="4 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="5" aria-label="5 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="small text-muted mt-1 rating-label">Sin calificar</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h5 class="mb-2">Explorá la Puna</h5>
+            <p class="mb-3">Recorridos en vehículos 4x4 por paisajes únicos a más de 3.000 metros de altura.</p>
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-light btn-sm js-calificar">
+                <i class="fa-solid fa-star me-2" aria-hidden="true"></i>Calificar ahora
+              </button>
+              <a class="btn btn-outline-light btn-sm" href="contacto.html">
+                <i class="fa-regular fa-envelope me-2" aria-hidden="true"></i>Enviar consulta
+              </a>
+            </div>
+          </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="flip-card" data-agencia="Quebrada Tours">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="agency-cover" aria-hidden="true">
+              <img src="img/quebradahumauaca.jpg" alt="">
+            </div>
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <h5 class="card-title mb-0">Quebrada Tours</h5>
+              <span class="agency-pill"><i class="fa-solid fa-sun" aria-hidden="true"></i>Cultural</span>
+            </div>
+            <p class="text-muted">Recorridos por la Quebrada de Humahuaca: Tilcara, Purmamarca y el Cerro de los Siete
+              Colores.</p>
+            <div class="agency-meta">
+              <span class="agency-pill"><i class="fa-solid fa-landmark" aria-hidden="true"></i>Patrimonio</span>
+              <span class="agency-pill"><i class="fa-solid fa-bus" aria-hidden="true"></i>Traslados</span>
+              <span class="agency-pill"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Gastronomía</span>
+            </div>
+            <ul class="list-unstyled small mt-2 mb-0 text-muted">
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-solid fa-location-dot mt-1" aria-hidden="true"></i>
+                <span>Quebrada de Humahuaca — UNESCO</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-regular fa-clock mt-1" aria-hidden="true"></i>
+                <span>Todos los días, 7:00–20:00</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start">
+                <i class="fa-solid fa-shield-heart mt-1" aria-hidden="true"></i>
+                <span>Guías bilingües · Grupos reducidos</span>
+              </li>
+            </ul>
+            <div class="mt-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="small text-muted">Tu rating:</span>
+                <div class="rating" role="radiogroup" aria-label="Calificación en estrellas">
+                  <button type="button" class="rating-star" data-value="1" aria-label="1 estrella"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="2" aria-label="2 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="3" aria-label="3 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="4" aria-label="4 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="5" aria-label="5 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="small text-muted mt-1 rating-label">Sin calificar</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h5 class="mb-2">Patrimonio mundial</h5>
+            <p class="mb-3">Descubrí los pueblos y colores de la Quebrada con guías apasionados por la cultura andina.
+            </p>
+            <div class="d-grid gap-2">
+              <a href="contacto.html" class="btn btn-light btn-sm">
+                <i class="fa-solid fa-arrow-right me-2" aria-hidden="true"></i>Ver itinerarios
+              </a>
+              <a href="#" class="btn btn-outline-light btn-sm">Ver galería</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4">
+      <div class="flip-card" data-agencia="Yungas Naturaleza">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="agency-cover" aria-hidden="true">
+              <img src="img/Parque-Nacional-Calilegua.jpg" alt="">
+            </div>
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <h5 class="card-title mb-0">Yungas Naturaleza</h5>
+              <span class="agency-pill"><i class="fa-solid fa-leaf" aria-hidden="true"></i>Eco</span>
+            </div>
+            <p class="text-muted">Turismo sustentable en las Yungas jujeñas: avistamiento de fauna, trekking y
+              campamentos.</p>
+            <div class="agency-meta">
+              <span class="agency-pill"><i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>Trekking</span>
+              <span class="agency-pill"><i class="fa-solid fa-binoculars" aria-hidden="true"></i>Fauna</span>
+              <span class="agency-pill"><i class="fa-solid fa-tent" aria-hidden="true"></i>Camping</span>
+            </div>
+            <ul class="list-unstyled small mt-2 mb-0 text-muted">
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-solid fa-location-dot mt-1" aria-hidden="true"></i>
+                <span>Calilegua · Tilcara · Libertador Gral. San Martín</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start mb-1">
+                <i class="fa-regular fa-clock mt-1" aria-hidden="true"></i>
+                <span>Lun a Sáb, 8:00–17:00</span>
+              </li>
+              <li class="d-flex gap-2 align-items-start">
+                <i class="fa-solid fa-shield-heart mt-1" aria-hidden="true"></i>
+                <span>Turismo responsable · Seguro en excursiones</span>
+              </li>
+            </ul>
+            <div class="mt-2">
+              <div class="d-flex align-items-center gap-2">
+                <span class="small text-muted">Tu rating:</span>
+                <div class="rating" role="radiogroup" aria-label="Calificación en estrellas">
+                  <button type="button" class="rating-star" data-value="1" aria-label="1 estrella"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="2" aria-label="2 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="3" aria-label="3 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="4" aria-label="4 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                  <button type="button" class="rating-star" data-value="5" aria-label="5 estrellas"><i
+                      class="fa-regular fa-star" aria-hidden="true"></i></button>
+                </div>
+              </div>
+              <div class="small text-muted mt-1 rating-label">Sin calificar</div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h5 class="mb-2">Naturaleza viva</h5>
+            <p class="mb-3">El Parque Nacional Calilegua te espera: más de 700 especies de aves y selva subtropical.</p>
+            <div class="d-grid gap-2">
+              <a href="contacto.html" class="btn btn-light btn-sm">
+                <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>Reservar excursión
+              </a>
+              <a href="#" class="btn btn-outline-light btn-sm">Ver recorridos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <h5>Contacto</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="footerEmail">Email</label>
+              <input id="footerEmail" class="form-control" type="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="footerMsg">Mensaje</label>
+              <textarea id="footerMsg" class="form-control" rows="3" placeholder="Escribí tu consulta"
+                required></textarea>
+            </div>
+            <button class="btn btn-light" type="submit">Enviar</button>
+          </form>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h5>Redes sociales</h5>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <h5>Mapa</h5>
+          <div class="ratio ratio-16x9">
+            <iframe title="Mapa"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Yungas Verdes</div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/animacion.js"></script>
 </body>
+
 </html>
