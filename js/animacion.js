@@ -221,3 +221,24 @@ $(document).ready(function () {
 
 });
 
+// Filtro por categoría
+$("#filtroCategoria").on("change", function () {
+  const categoria = $(this).val();
+
+  if (categoria === "") {
+    $("#destinosGrid .card").show();
+  } else {
+    $("#destinosGrid .card").hide();
+    $("#destinosGrid .card." + categoria).show();
+  }
+});
+
+// Filtro por búsqueda
+$("#busqueda").on("keyup", function () {
+  const texto = $(this).val().toLowerCase();
+
+  $("#destinosGrid .card").each(function () {
+    const contenido = $(this).text().toLowerCase();
+    $(this).toggle(contenido.includes(texto));
+  });
+});
