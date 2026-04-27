@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,63 +9,225 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Navbar -->
-    <nav>
-        <div class="">
-            <a href="#">Yungas Verdes</a>
-            <button type="button">
-                <span></span>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-leaf me-1"></i>Yungas Verdes
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                class="fa-solid fa-house me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinos.html"><i
+                                class="fa-solid fa-map-location-dot me-1"></i>Destinos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agencias.html"><i
+                                class="fa-solid fa-building me-1"></i>Agencias</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="precios.html"><i
+                                class="fa-solid fa-tag me-1"></i>Precios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i
+                                class="fa-solid fa-envelope me-1"></i>Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html"><i
+                                class="fa-solid fa-newspaper me-1"></i>Blog</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <p class="text-uppercase fw-bold small mb-2" style="letter-spacing:.12em; opacity:.8;">
+                <i class="fa-solid fa-tag me-1"></i>Tarifas Accesibles
+            </p>
+            <h1>Planes y Precios</h1>
+            <p>Elige el plan perfecto para tu aventura en las Yungas. Transparencia total, sin sorpresas.</p>
+        </div>
+    </section>
     <!-- Tabla Comparativa -->
-    <section>
-        <div class="">
-            <h2>Planes y Precios</h2>
-            <div>
-                <table>
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="mb-4 text-center">Compara nuestros planes</h2>
+                </div>
+            </div>
+
+            <!-- Tabla Responsive -->
+            <div class="table-responsive">
+                <table class="tabla-precios">
                     <thead>
                         <tr>
-                            <th>Plan</th>
-                            <th>Precio</th>
-                            <th>Duración</th>
-                            <th>Incluye</th>
-                            <th>Acción</th>
+                            <th>Característica</th>
+                            <th class="plan-basico">
+                                <div class="plan-header">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    <span>Básico</span>
+                                </div>
+                                <div class="plan-precio">$450</div>
+                                <small class="plan-duracion">3 días</small>
+                            </th>
+                            <th class="plan-premium">
+                                <div class="plan-header plan-featured">
+                                    <i class="fa-solid fa-crown"></i>
+                                    <span>Premium</span>
+                                </div>
+                                <div class="plan-precio">$890</div>
+                                <small class="plan-duracion">5 días</small>
+                            </th>
+                            <th class="plan-completo">
+                                <div class="plan-header">
+                                    <i class="fa-solid fa-mountain"></i>
+                                    <span>Completo</span>
+                                </div>
+                                <div class="plan-precio">$1.290</div>
+                                <small class="plan-duracion">7 días</small>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Básico</td>
-                            <td>$100</td>
-                            <td>2 días</td>
-                            <td>Transporte, Guía</td>
-                            <td><button>Seleccionar</button></td>
+                            <td><strong>Destinos incluidos</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Calilegua + Purmamarca
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                4 destinos principales
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Todos los destinos
+                            </td>
                         </tr>
                         <tr>
-                            <td>Intermedio</td>
-                            <td>$200</td>
-                            <td>4 días</td>
-                            <td>Transporte, Guía, Alojamiento</td>
-                            <td><button>Seleccionar</button></td>
+                            <td><strong>Transporte incluido</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Terrestre
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                Minibús privado
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Todoterreno 4x4
+                            </td>
                         </tr>
                         <tr>
-                            <td>Premium</td>
-                            <td>$300</td>
-                            <td>7 días</td>
-                            <td>Todo incluido</td>
-                            <td><button>Seleccionar</button></td>
+                            <td>
+                                <strong>Alojamiento</strong>
+                                <i class="fa-solid fa-circle-question" style="color: var(--muted); margin-left: 8px; cursor: help;" 
+                                   data-bs-toggle="tooltip" data-bs-title="Categoría de hospedaje según plan"></i>
+                            </td>
+                            <td data-label="Básico">
+                                <span class="badge bg-light text-dark">
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                </span>
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <span class="badge bg-light text-dark">
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                </span>
+                            </td>
+                            <td data-label="Completo">
+                                <span class="badge bg-light text-dark">
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                    <i class="fa-solid fa-star" style="color: gold;"></i>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comidas</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Desayuno
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                Des. + Almuerzo
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Des. + Almuerzo + Cena
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Guía especializado</strong>
+                                <i class="fa-solid fa-circle-question" style="color: var(--muted); margin-left: 8px; cursor: help;" 
+                                   data-bs-toggle="tooltip" data-bs-title="Profesional bilingüe certificado"></i>
+                            </td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Grupo compartido
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                Guía dedicado
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Guía + Biólogo
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actividades extras</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-xmark" style="color: red;"></i>
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                3 actividades
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Ilimitadas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Seguro de viaje</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-xmark" style="color: red;"></i>
+                                Opcional
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-check" style="color: var(--verde);"></i>
+                                Incluido
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Premium
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fotos profesionales</strong></td>
+                            <td data-label="Básico">
+                                <i class="fa-solid fa-xmark" style="color: red;"></i>
+                            </td>
+                            <td data-label="Premium" class="highlight">
+                                <i class="fa-solid fa-xmark" style="color: red;"></i>
+                            </td>
+                            <td data-label="Completo">
+                                <i class="fa-solid fa-check" style="color: var(--verde-claro);"></i>
+                                Álbum digital
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -72,34 +235,109 @@
         </div>
     </section>
 
-    <footer>
-        <div class="">
-            <div class="">
-                <div class="">
-                    <h5>Contacto</h5>
-                    <form>
-                        <div class="">
-                            <input type="email" placeholder="Email">
+    <!-- Sección de descuentos -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="oferta-card reveal">
+                        <div class="oferta-icono">
+                            <i class="fa-solid fa-users"></i>
                         </div>
-                        <div class="">
-                            <textarea rows="3" placeholder="Mensaje"></textarea>
+                        <h4>Grupos</h4>
+                        <p class="text-muted mb-2">5+ personas</p>
+                        <p class="text-success fw-bold">10% descuento</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="oferta-card reveal">
+                        <div class="oferta-icono">
+                            <i class="fa-solid fa-calendar"></i>
                         </div>
-                        <button type="submit">Enviar</button>
+                        <h4>Temporada baja</h4>
+                        <p class="text-muted mb-2">Mayo - Agosto</p>
+                        <p class="text-success fw-bold">15% descuento</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="oferta-card reveal">
+                        <div class="oferta-icono">
+                            <i class="fa-solid fa-repeat"></i>
+                        </div>
+                        <h4>Clientes recurrentes</h4>
+                        <p class="text-muted mb-2">Ya viajaste con nosotros</p>
+                        <p class="text-success fw-bold">Acumulá puntos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%); color: #fff;">
+        <div class="container text-center">
+            <h2 class="mb-3">¿Listo para tu aventura?</h2>
+            <p class="lead mb-4">Contactanos hoy y reserva tu lugar en la próxima salida.</p>
+            <a href="contacto.html" class="btn btn-light btn-lg fw-bold">
+                <i class="fa-solid fa-envelope me-2"></i>Solicitar información
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-envelope me-2"></i>Newsletter</h5>
+                    <form id="footerForm">
+                        <div class="mb-2">
+                            <input type="email" class="form-control form-control-sm" placeholder="tu@email.com"
+                                required />
+                        </div>
+                        <div class="mb-2">
+                            <textarea class="form-control form-control-sm" rows="2"
+                                placeholder="Mensaje (opcional)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-light btn-sm fw-bold">
+                            <i class="fa-solid fa-paper-plane me-1"></i>Enviar
+                        </button>
                     </form>
                 </div>
-                <div class="">
-                    <h5>Redes Sociales</h5>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
+
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-share-nodes me-2"></i>Redes sociales</h5>
+                    <div class="footer-social mt-2">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                    <p class="small mt-3" style="opacity:.7;">Seguinos para ver fotos, videos y las últimas novedades
+                        del destino.</p>
                 </div>
-                <div class="">
-                    <h5>Mapa</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-location-dot me-2"></i>Ubicación</h5>
+                    <div style="border-radius:12px; overflow:hidden; border:2px solid rgba(255,255,255,.2);">
+                        <iframe title="Mapa San Salvador de Jujuy"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=-65.310%2C-24.205%2C-65.280%2C-24.165&layer=mapnik"
+                            width="100%" height="180" style="border:0; display:block;" loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">© 2026 Yungas Verdes — TP Bootstrap / UNJu &nbsp;|&nbsp;
+                    <i class="fa-solid fa-leaf me-1"></i>Turismo Responsable
+                </p>
             </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/animacion.js"></script>
 </body>
+
 </html>
