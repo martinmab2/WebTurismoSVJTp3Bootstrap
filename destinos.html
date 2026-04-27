@@ -1,252 +1,404 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos - Yungas Verdes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinos - Yungas Verdes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <style>
-        /* Grid responsive */
-        #destinosGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+  /* Grid responsive */
+  #destinosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 
-        /* Card estilo */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
+  /* Card estilo */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
 
-        /* Zoom en imagen */
-        .card img {
-            transition: transform 0.3s ease;
-            width: 100%;
-        }
-        .card img:hover {
-            transform: scale(1.1);
-        }
-    </style>
+  /* Zoom en imagen */
+  .img-container {
+    height: 200px;
+    overflow: hidden; /* Esto evita que la imagen tape las letras */
+    border-radius: 15px 15px 0 0;
+  }
+
+  .card img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card:hover img {
+    transform: scale(1.15);
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .card-title {
+    color: var(--verde-yunga);
+    font-weight: bold;
+  }
+
+  /* Estilo para la Tabla */
+  .table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .table thead {
+    background-color: var(--verde-yunga);
+    color: white;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--verde-claro);
+  }
+</style>
+
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="">
-            <a href="#">Yungas Verdes</a>
-            <button type="button">
-                <span></span>
-            </button>
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="destinos.html">Destinos</a></li>
-                    <li><a href="agencias.html">Agencias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="precios.html">Precios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-   
-</head>
-<body class="container my-4">
-
+  <!-- Navbar -->
+  <nav>
+    <div class="">
+      <a href="#">Yungas Verdes</a>
+      <button type="button">
+        <span></span>
+      </button>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinos.html">Destinos</a></li>
+          <li><a href="agencias.html">Agencias</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="precios.html">Precios</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-4">
     <!-- Filtros -->
     <section class="mb-4">
-        <div class="row g-3">
-            <div class="col-md-6">
-                <select id="filtroCategoria" class="form-select">
-                    <option value="">Todas las categorías</option>
-                    <option value="naturaleza">Naturaleza</option>
-                    <option value="cultura">Cultura</option>
-                    <option value="aventura">Aventura</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <input type="text" id="busqueda" class="form-control" placeholder="Buscar destino">
-            </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <select id="filtroCategoria" class="form-select">
+            <option value="">Todas las categorías</option>
+            <option value="naturaleza">Naturaleza</option>
+            <option value="cultura">Cultura</option>
+            <option value="aventura">Aventura</option>
+          </select>
         </div>
+        <div class="col-md-6">
+          <input type="text" id="busqueda" class="form-control" placeholder="Buscar destino">
+        </div>
+      </div>
     </section>
 
-   <!-- Grid de Destinos -->
-  <section>
-    <div id="destinosGrid">
-      <!-- Naturaleza -->
-      <div class="card naturaleza">
-        <img src="img/lagunadepozuelos.jpg" alt="Laguna de Pozuelos">
-        <div>
-          <h5>Laguna de Pozuelos</h5>
-          <p>Reserva natural Patrimonio de la Humanidad.</p>
-          <p><small>Precio: $200</small></p>
+    <!-- Grid de Destinos -->
+    <section>
+      <div id="destinosGrid">
+        <!-- Naturaleza -->
+        <div class="card naturaleza">
+          <div class="img-container">
+            <img src="img/lagunadepozuelos.jpg" alt="Laguna de Pozuelos">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Laguna de Pozuelos</h5>
+            <p class="card-text text-muted">Reserva natural Patrimonio de la Humanidad.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Naturaleza</span>
+              <span class="fw-bold text-dark">$200</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card naturaleza">
-        <img src="img/Parque-Nacional-Calilegu.jpg" alt="Parque Nacional Calilegua">
-        <div>
-          <h5>Parque Nacional Calilegua</h5>
-          <p>Selva de yungas con gran biodiversidad.</p>
-          <p><small>Precio: $250</small></p>
-        </div>
-      </div>
-      <div class="card naturaleza">
-        <img src="img/salinasgrandes.webp" alt="Salinas Grandes">
-        <div>
-          <h5>Salinas Grandes</h5>
-          <p>Gran salar con paisajes únicos.</p>
-          <p><small>Precio: $180</small></p>
-        </div>
-      </div>
-      <div class="card naturaleza">
-        <img src="img/SerraniasDelHornocal.jpg" alt="Serranías del Hornocal">
-        <div>
-          <h5>Serranías del Hornocal</h5>
-          <p>Montañas multicolores, atractivo geológico.</p>
-          <p><small>Precio: $220</small></p>
-        </div>
-      </div>
 
-      <!-- Cultura -->
-      <div class="card cultura">
-        <img src="img/quebradahumahuaca.jpg" alt="Quebrada de Humahuaca">
-        <div>
-          <h5>Quebrada de Humahuaca</h5>
-          <p>Región con fuerte identidad cultural.</p>
-          <p><small>Precio: $150</small></p>
+        <div class="card naturaleza">
+          <div class="img-container">
+            <img src="img/Parque-Nacional-Calilegua.jpg" alt="Parque Nacional Calilegua">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Parque Nacional Calilegua</h5>
+            <p class="card-text text-muted">Selva de yungas con gran biodiversidad.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Naturaleza</span>
+              <span class="fw-bold text-dark">$250</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card cultura">
-        <img src="img/tilcara.jpg" alt="Tilcara">
-        <div>
-          <h5>Tilcara</h5>
-          <p>Pueblo con ruinas arqueológicas.</p>
-          <p><small>Precio: $170</small></p>
-        </div>
-      </div>
-      <div class="card cultura">
-        <img src="img/juella.jpg" alt="Juella">
-        <div>
-          <h5>Juella</h5>
-          <p>Localidad con tradición cultural.</p>
-          <p><small>Precio: $160</small></p>
-        </div>
-      </div>
 
-      <!-- Aventura -->
-      <div class="card aventura">
-        <img src="img/purmamarca.jpg" alt="Purmamarca">
-        <div>
-          <h5>Purmamarca</h5>
-          <p>Cerro de los Siete Colores, trekking.</p>
-          <p><small>Precio: $200</small></p>
+        <div class="card naturaleza">
+          <div class="img-container">
+            <img src="img/salinasgrandes.webp" alt="Salinas Grandes">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Salinas Grandes</h5>
+            <p class="card-text text-muted">Gran salar con paisajes únicos.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Naturaleza</span>
+              <span class="fw-bold text-dark">$180</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card naturaleza">
+          <div class="img-container">
+            <img src="img/SerraniasDelHornocal.jpg" alt="Serranías del Hornocal">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Serranías del Hornocal</h5>
+            <p class="card-text text-muted">Montañas multicolores, atractivo geológico.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Naturaleza</span>
+              <span class="fw-bold text-dark">$220</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cultura -->
+        <div class="card cultura">
+          <div class="img-container">
+             <img src="img/quebradahumauaca.jpg" alt="Quebrada de Humahuaca">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Quebrada de Humahuaca</h5>
+            <p class="card-text text-muted">Región con fuerte identidad cultural.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Cultura</span>
+              <span class="fw-bold text-dark">$150</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cultura">
+          <div class="img-container">
+            <img src="img/tilcara.jpg" alt="Tilcara">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Tilcara</h5>
+            <p class="card-text text-muted">Pueblo con ruinas arqueológicas.</p>
+             <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Cultura</span>
+              <span class="fw-bold text-dark">$170</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cultura">
+          <div class="img-container">
+            <img src="img/juella.jpg" alt="Juella">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Juella</h5>
+            <p class="card-text text-muted">Localidad con tradición cultural.</p>
+             <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Cultura</span>
+              <span class="fw-bold text-dark">$160</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aventura -->
+        <div class="card aventura">
+          <div class="img-container">
+            <img src="img/purmamarca.jpg" alt="Purmamarca">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Purmamarca</h5>
+            <p class="card-text text-muted">Cerro de los Siete Colores, trekking.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Aventura</span>
+              <span class="fw-bold text-dark">$200</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card aventura">
+          <div class="img-container">
+            <img src="img/elcarmen.jpg" alt="El Carmen">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">El Carmen</h5>
+            <p class="card-text text-muted">Actividades al aire libre.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Aventura</span>
+              <span class="fw-bold text-dark">$140</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card aventura">
+          <div class="img-container">
+            <img src="img/termasdereyes.jpg" alt="Termas de Reyes">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Termas de Reyes</h5>
+            <p class="card-text text-muted">Turismo de relax y senderismo.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-success">Aventura</span>
+              <span class="fw-bold text-dark">$190</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card aventura">
-        <img src="img/elcarmen.jpg" alt="El Carmen">
-        <div>
-          <h5>El Carmen</h5>
-          <p>Actividades al aire libre.</p>
-          <p><small>Precio: $140</small></p>
-        </div>
-      </div>
-      <div class="card aventura">
-        <img src="img/termasdereyes.jpg" alt="Termas de Reyes">
-        <div>
-          <h5>Termas de Reyes</h5>
-          <p>Turismo de relax y senderismo.</p>
-          <p><small>Precio: $190</small></p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- Tabla de Precios -->
-  <section>
-    <h2>Tabla de Precios</h2>
-    <div class="table-responsive">
-      <table>
-        <thead>
-          <tr>
-            <th>Destino</th>
-            <th>Precio Básico</th>
-            <th>Precio Premium</th>
-            <th>Duración</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Laguna de Pozuelos</td><td>$200</td><td>$250</td><td>2 días</td></tr>
-          <tr><td>Parque Nacional Calilegua</td><td>$250</td><td>$300</td><td>3 días</td></tr>
-          <tr><td>Salinas Grandes</td><td>$180</td><td>$220</td><td>2 días</td></tr>
-          <tr><td>Serranías del Hornocal</td><td>$220</td><td>$270</td><td>3 días</td></tr>
-          <tr><td>Quebrada de Humahuaca</td><td>$150</td><td>$200</td><td>2 días</td></tr>
-          <tr><td>Tilcara</td><td>$170</td><td>$220</td><td>2 días</td></tr>
-          <tr><td>Juella</td><td>$160</td><td>$210</td><td>2 días</td></tr>
-          <tr><td>Purmamarca</td><td>$200</td><td>$250</td><td>2 días</td></tr>
-          <tr><td>El Carmen</td><td>$140</td><td>$180</td><td>1 día</td></tr>
-          <tr><td>Termas de Reyes</td><td>$190</td><td>$240</td><td>2 días</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <section class="py-5">
+      <h2 class="text-center mb-4" style="color: var(--verde-yunga);">Tabla de Precios</h2>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th class="p-3">Destino</th>
+              <th>Precio Básico</th>
+              <th>Precio Premium</th>
+              <th>Duración</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td class="fw-bold p-3">Laguna de Pozuelos</td>
+              <td><span class="text-muted">$200</span></td>
+              <td class="text-success fw-bold">$250</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Parque Nacional Calilegua</td>
+              <td><span class="text-muted">$250</span></td>
+              <td class="text-success fw-bold">$300</td>
+              <td>3 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Salinas Grandes</td>
+              <td><span class="text-muted">$180</span></td>
+              <td class="text-success fw-bold">$220</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Serranías del Hornocal</td>
+              <td><span class="text-muted">$220</span></td>
+              <td class="text-success fw-bold">$270</td>
+              <td>3 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Quebrada de Humahuaca</td>
+              <td><span class="text-muted">$150</span></td>
+              <td class="text-success fw-bold">$200</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Tilcara</td>
+              <td><span class="text-muted">$170</span></td>
+              <td class="text-success fw-bold">$220</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Juella</td>
+              <td><span class="text-muted">$160</span></td>
+              <td class="text-success fw-bold">$210</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Purmamarca</td>
+              <td><span class="text-muted">$200</span></td>
+              <td class="text-success fw-bold">$250</td>
+              <td>2 días</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">El Carmen</td>
+              <td><span class="text-muted">$140</span></td>
+              <td class="text-success fw-bold">$180</td>
+              <td>1 día</td>
+            </tr>
+            <tr>
+              <td class="fw-bold p-3">Termas de Reyes</td>
+              <td><span class="text-muted">$190</span></td>
+              <td class="text-success fw-bold">$240</td>
+              <td>2 días</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
     <footer>
+      <div class="">
         <div class="">
-            <div class="">
-                <div class="">
-                    <h5>Contacto</h5>
-                    <form>
-                        <div class="">
-                            <input type="email" placeholder="Email">
-                        </div>
-                        <div class="">
-                            <textarea rows="3" placeholder="Mensaje"></textarea>
-                        </div>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="">
-                    <h5>Redes Sociales</h5>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                    <a href="#"><i></i></a>
-                </div>
-                <div class="">
-                    <h5>Mapa</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
+          <div class="">
+            <h5>Contacto</h5>
+            <form>
+              <div class="">
+                <input type="email" placeholder="Email">
+              </div>
+              <div class="">
+                <textarea rows="3" placeholder="Mensaje"></textarea>
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+          <div class="">
+            <h5>Redes Sociales</h5>
+            <a href="#"><i></i></a>
+            <a href="#"><i></i></a>
+            <a href="#"><i></i></a>
+          </div>
+          <div class="">
+            <h5>Mapa</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0!2d-65.3!3d-24.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEyJzAwLjAiUyA2NcKwMTgnMDAuMCJX!5e0!3m2!1ses!2sar!4v1234567890"
+              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
         </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <!-- jQuery con filtrado corregido -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      // Filtro por categoría
-      $("#filtroCategoria").on("change", function(){
-        var categoria = $(this).val();
-        if(categoria === ""){
-          $("#destinosGrid .card").show();
-        } else {
-          $("#destinosGrid .card").hide();
-          $("#destinosGrid .card." + categoria).show();
-        }
-      });
+    <!-- jQuery con filtrado corregido -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Filtro por categoría
+        $("#filtroCategoria").on("change", function () {
+          var categoria = $(this).val();
+          if (categoria === "") {
+            $("#destinosGrid .card").show();
+          } else {
+            $("#destinosGrid .card").hide();
+            $("#destinosGrid .card." + categoria).show();
+          }
+        });
 
-      // Filtro por búsqueda
-      $("#busqueda").on("keyup", function(){
-        var texto = $(this).val().toLowerCase();
-        $("#destinosGrid .card").each(function(){
-          var contenido = $(this).text().toLowerCase();
-          $(this).toggle(contenido.indexOf(texto) > -1);
+        // Filtro por búsqueda
+        $("#busqueda").on("keyup", function () {
+          var texto = $(this).val().toLowerCase();
+          $("#destinosGrid .card").each(function () {
+            var contenido = $(this).text().toLowerCase();
+            $(this).toggle(contenido.indexOf(texto) > -1);
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
